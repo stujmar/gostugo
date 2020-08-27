@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    transition: all 0.1s ease;
+    transition: all 0.05s ease;
 }
 
 body {
@@ -8,7 +8,7 @@ body {
 }
 
 .header {
-    background: url("../logo.jpg") blue;
+    background: url("../img/logo.jpg") blue;
     background-size: 100%;
     height: calc(100vw * .125);
     width: 100%;
@@ -51,9 +51,9 @@ body {
 
 .menu-item a {
     text-decoration: none;
-    font-family: 'Averia Sans Libre', cursive;
+    font-family: monospace;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 
 .wrapper {
@@ -80,11 +80,11 @@ body {
 }
 
 .grid-one {
-    padding-top: 56%;
+    padding-top: 5%;
     padding-left: 10px;
     text-align: left;
     text-decoration: none;
-    font-family: 'Averia Sans Libre', cursive;
+    font-family: monospace;
     font-weight: bold;
     font-size: 3rem;
     color: black;
@@ -92,8 +92,8 @@ body {
 }
 
 .grid-one:hover {
-    text-shadow: -4px 2px 4px  rgb(206, 2, 206),
-    5px 0 2px rgb(1, 197, 223);
+    text-shadow: -4px 2px 4px  rgb(206, 2, 206, .6),
+    0px -2px 4px rgb(1, 197, 223);
 }
 
 .body-hd {
