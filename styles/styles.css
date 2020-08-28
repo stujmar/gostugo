@@ -64,13 +64,14 @@ body {
     grid-template-columns: 1fr;
     width: 100%; 
     display: grid;
-    grid-auto-rows: 20vw; 
+    /* grid-auto-rows: 20vw;  */
 }
 
 
 .picture-grid {
     border: 5px solid black;
     background-color: rgb(255, 255, 255);
+    height: 300px;
 }
 
 .grid-one {
@@ -119,6 +120,9 @@ and (min-width : 700px) {
     .center-grid {
         grid-template-columns: 1fr 1fr;
     }
+    .picture-grid {
+        height: 250px;
+    }
 }
 
 /* Smartphones (portrait) ----------- */
@@ -129,5 +133,8 @@ and (min-width : 1020px) {
     }
     .center-grid {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .picture-grid {
+        height: 250px;
     }
 }
