@@ -17,8 +17,6 @@ body {
 
 .menu {
     padding-top: 15px;
-    /* background: linear-gradient(0deg, rgba(245,231,255,0) 60%, rgba(235, 189, 255, 0.05) 95%, rgba(0,151,255,1) 95%, rgba(0,86,255,1) 95%, rgba(2,0,36,1) 97%, rgba(9,9,121,1) 100%),
-    white; */
     background: white;
     width: 100%;
     height: 75px;
@@ -79,18 +77,6 @@ body {
     background-size: 100%;
 }
 
-.grid-one {
-    padding-top: 5%;
-    padding-left: 10px;
-    text-align: left;
-    text-decoration: none;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 3rem;
-    color: black;
-
-}
-
 .grid-one:hover {
     text-shadow: -4px 2px 4px  rgb(206, 2, 206, .6),
     0px -2px 4px rgb(1, 197, 223);
@@ -98,4 +84,26 @@ body {
 
 .body-hd {
  font-size: 1.25rem;
+}
+
+
+.grid-title, .grid-body {
+    color: black;
+    padding-left: 10px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.grid-title {
+    padding-top: 45%;
+    text-align: left;
+    font-size: 2.75rem;
+}
+
+.grid-body {
+    font-size: 1.1rem;
+}
+
+a {
+    text-decoration: none;
 }
