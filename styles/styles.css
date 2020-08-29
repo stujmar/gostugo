@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     transition: all 0.05s ease;
+    font-family: 'Tajawal', sans-serif;
 }
 
 h4 {
@@ -15,10 +16,15 @@ h4 {
     
 }
 
+.link-list {
+    text-align: left;
+}
+
 .intro {
     display: block;
     width: 95%;
     margin: 0 auto 10px;
+    text-align: center;
 }
 
 .menu {
@@ -61,14 +67,14 @@ h4 {
 }
 
 .wrapper {
-    height : 100vh; 
+    /* height : 100vh;  */
     display: grid;
     grid-template-columns: 0fr 1fr 0fr;
 }
 
 .flex-grid {
     margin: 0 auto;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     display:flex;
     flex-wrap: wrap;
