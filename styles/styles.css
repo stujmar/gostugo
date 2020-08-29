@@ -61,14 +61,18 @@ body {
 }
 
 .flex-grid {
+    margin: 0 auto;
     background: red;
-    height: 100px;
+    height: 100vh;
+    width: 100%;
+    display:flex;
 }
 
 .flex-item {
     display: block;
     height: 200px;
     width: 200px;
+    margin: 5px;
     border: 1px solid greenyellow;
 }
 
