@@ -60,6 +60,18 @@ body {
     grid-template-columns: 1fr 4fr 1fr;
 }
 
+.flex-grid {
+    background: red;
+    height: 100px;
+}
+
+.flex-item {
+    display: block;
+    height: 200px;
+    width: 200px;
+    border: 1px solid greenyellow;
+}
+
 .center-grid {
     grid-template-columns: 1fr;
     width: 100%; 
