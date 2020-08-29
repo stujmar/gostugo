@@ -3,16 +3,18 @@
     transition: all 0.05s ease;
 }
 
-body {
-    background: rgb(255, 255, 255);
-}
-
 .header {
-    background: url("../img/logo.jpg") blue;
+    background: url("../img/logo.jpg");
     background-size: 100%;
     height: calc(100vw * .125);
     width: 100%;
     
+}
+
+.intro {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .menu {
@@ -57,7 +59,7 @@ body {
 .wrapper {
     height : 100vh; 
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 0fr 1fr 0fr;
 }
 
 .flex-grid {
@@ -73,8 +75,8 @@ body {
 
 .flex-item {
     display: block;
-    height: 200px;
-    width: 200px;
+    height: 125px;
+    width: 125px;
     margin: 5px;
     border: 1px solid black;
     box-shadow: 0 0 5px black;
@@ -127,7 +129,7 @@ a {
     text-decoration: none;
 }
 
-/* Smartphones (portrait) ----------- */
+/* Smartphones (portrait) + Tablet ----------- */
 @media only screen 
 and (min-width : 700px) {
     .menu {
@@ -142,7 +144,7 @@ and (min-width : 700px) {
     }
 }
 
-/* Smartphones (portrait) ----------- */
+/* Desktop ----------- */
 @media only screen 
 and (min-width : 1020px) {
     .menu {
