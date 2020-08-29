@@ -9,6 +9,7 @@ h4 {
 }
 
 .header {
+    margin-top: 10px;
     background: url("../img/logo.jpg");
     background-size: 100%;
     height: calc(100vw * .125);
@@ -17,8 +18,22 @@ h4 {
 }
 
 .link-list {
+    font-size: 1.25rem;
+    font-weight: bold;
+    list-style-type: square;
     text-align: left;
+    text-decoration: underline;
 }
+
+a:visited, a:active, a:link {
+    color: black;
+  }
+
+  .below {
+      display:inline-block;
+      font-weight: 600;
+      border-bottom: 2px solid rgb(189, 89, 228);
+  }
 
 .intro {
     display: block;
@@ -74,7 +89,6 @@ h4 {
 
 .flex-grid {
     margin: 0 auto;
-    /* height: 100vh; */
     width: 100%;
     display:flex;
     flex-wrap: wrap;
@@ -84,16 +98,34 @@ h4 {
 
 .flex-item {
     display: block;
-    height: 125px;
-    width: 125px;
+    position: relative;
+    height: 45vw;
+    width: 45%;
     margin: 5px;
     border: 1px solid black;
     box-shadow: 0 0 5px black;
 }
 
+.item-title, .item-content {
+    width: 100%;
+    position: absolute;
+    padding: 2px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.item-title {
+    /* font-variant: small-caps; */
+    font-size: 1.25rem;
+}
+
+.item-content {
+ bottom: 0;
+}
+
 .hotdogger {
     background: url(../img/grid_hd.png);
-    background-size: 250px;
+    background-size: cover;
 }
 
 .picture-grid {
@@ -145,6 +177,9 @@ and (min-width : 700px) {
         background: rgb(255, 102, 102);
         
     }
+    .intro {
+        width: 80%;
+    }
     .center-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -158,6 +193,9 @@ and (min-width : 700px) {
 and (min-width : 1020px) {
     .menu {
         background: rgb(173, 247, 55);
+    }
+    .intro {
+        width:50%;
     }
     .center-grid {
         grid-template-columns: 1fr 1fr 1fr;
