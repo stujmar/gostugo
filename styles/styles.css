@@ -32,7 +32,7 @@ a:visited, a:active, a:link {
   .below {
       display:inline-block;
       font-weight: 600;
-      border-bottom: 2px solid rgb(189, 89, 228);
+      border-bottom: 3px solid rgb(189, 89, 228);
   }
 
 .intro {
@@ -102,16 +102,17 @@ a:visited, a:active, a:link {
     height: 45vw;
     width: 45%;
     margin: 5px;
-    border: 1px solid black;
-    box-shadow: 0 0 5px black;
+    border: 2px solid black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .item-title, .item-content {
     width: 100%;
     position: absolute;
     padding: 2px;
+    border-bottom: 2px solid black;
     font-weight: bold;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 1);
 }
 
 .item-title {
@@ -120,11 +121,42 @@ a:visited, a:active, a:link {
 }
 
 .item-content {
+    display:none;
  bottom: 0;
 }
 
 .hotdogger {
     background: url(../img/grid_hd.png);
+    background-size: cover;
+}
+
+.earthmounds {
+    background: url(../img/grid_em.png);
+    background-size: cover;
+}
+
+.workbench {
+    background: url(../img/grid_ew.png);
+    background-size: cover;
+}
+
+.bikerack {
+    background: url(../img/grid_br.png);
+    background-size: cover;
+}
+
+.audio {
+    background: url(../img/grid_ae.png);
+    background-size: cover;
+}
+
+.villain {
+    background: url(../img/grid_vd.png);
+    background-size: cover;
+}
+
+.puzzle {
+    background: url(../img/grid_pt.png);
     background-size: cover;
 }
 
@@ -175,6 +207,8 @@ a {
 and (min-width : 700px) {
     .menu {
         background: rgb(255, 102, 102);
+        margin: 0 auto;
+        width: 40%;
         
     }
     .intro {
@@ -186,12 +220,25 @@ and (min-width : 700px) {
     .picture-grid {
         height: 250px;
     }
+
+    .flex-item {
+        height: 32vw;
+        width: 32%;
+        margin: 5px;
+    }
 }
 
 /* Desktop ----------- */
 @media only screen 
 and (min-width : 1020px) {
+    .wrapper {
+        /* height : 100vh;  */
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+    }
     .menu {
+        margin: 0 auto;
+        width: 40%;
         background: rgb(173, 247, 55);
     }
     .intro {
@@ -202,5 +249,11 @@ and (min-width : 1020px) {
     }
     .picture-grid {
         height: 250px;
+    }
+
+    .flex-item {
+        height: 15vw;
+        width: 24%;
+        margin: 5px;
     }
 }
