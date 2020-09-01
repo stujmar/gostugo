@@ -8,6 +8,11 @@ h4 {
     margin-bottom: 0px;
 }
 
+
+.back {
+    margin: 0 auto !important;
+}
+
 .header {
     margin-top: 10px;
     background: url("../img/logo.jpg");
