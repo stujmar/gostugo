@@ -42,6 +42,7 @@ h4 {
 
 .project-list {
     font-size: 1.25rem;
+    /* width: 95%; */
     font-weight: bold;
     list-style-type: square;
     text-align: left;
