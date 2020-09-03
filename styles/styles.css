@@ -10,7 +10,9 @@ h4 {
 
 
 .back {
-    margin: 0 auto !important;
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
 
 .header {
@@ -19,7 +21,7 @@ h4 {
     background-size: 100%;
     height: calc(100vw * .125);
     width: 100%;
-    
+    position:relative;
 }
 
 .link-list {
