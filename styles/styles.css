@@ -8,15 +8,24 @@ a:hover {
   color: gray;
 }
 
+ul {
+    list-style-type:none;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
 .sosh {
     max-width: 200px !important;
 }
 
 .project-image {
     background: rgb(197, 197, 197);
-    height: 200px;
-    width: 200px;
-
+    width: 100%;
+ height: 140px;
 }
 
 .gostugo {
@@ -64,14 +73,20 @@ a:hover {
 }
 
 /*---Media Queries --*/
-@media (max-width: 992px) {
-
-  }
-@media (max-width: 768px) {
-  
-}
 @media (max-width: 576px) {
-  
+    
+}
+@media (min-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+@media (min-width: 992px) {
+    .wrapper {
+        max-width: 1200px;
+        width: 90%;
+    }
+    
 }
 
 
