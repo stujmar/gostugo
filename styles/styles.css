@@ -8,7 +8,9 @@ a:hover {
   color: gray;
 }
 
-
+.sosh {
+    max-width: 200px !important;
+}
 
 .gostugo {
   padding-left: 30px;
