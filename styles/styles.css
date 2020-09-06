@@ -12,6 +12,13 @@ a:hover {
     max-width: 200px !important;
 }
 
+.project-image {
+    background: rgb(197, 197, 197);
+    height: 200px;
+    width: 200px;
+
+}
+
 .gostugo {
   padding-left: 30px;
   mix-blend-mode: multiply;
