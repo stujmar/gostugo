@@ -22,6 +22,18 @@ ul {
     max-width: 200px !important;
 }
 
+.project {
+    margin-bottom: 20px !important;
+}
+
+.project-list {
+    font-weight: bold;
+}
+
+.project-bullet {
+    font-weight: 400;
+}
+
 .project-title {
     border-bottom: 1px solid rgb(184, 184, 184);
     display: inline-block;
@@ -31,7 +43,6 @@ ul {
 .project-image {
     background: rgb(197, 197, 197);
     width: 100%;
- height: 140px;
 }
 
 .gostugo {
@@ -76,6 +87,11 @@ ul {
 
 .horizontal {
   width: 80%;
+}
+
+.footer {
+    width: 100%;
+    height: 75px;
 }
 
 /*---Media Queries --*/
