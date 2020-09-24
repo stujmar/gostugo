@@ -9,6 +9,10 @@ body {
     background: rgb(239, 241, 217);
 }
 
+.wrapper {
+    width: 100%;
+}
+
 .page {
     padding-top: 20px;
     display:block;
@@ -41,7 +45,7 @@ body {
     border:1px solid red;
     /* height: 100px; */
     margin: 0 auto 20px;
-    width: 80%;
+    width: 100%;
     max-width: 1000px;
     box-shadow: 0px 4px 4px rgba(250, 128, 114, 0.5);
 }
@@ -74,28 +78,12 @@ body {
    border: 1px solid rgba(255, 0, 0, 0.363);
 }
 
-/* wrapper class to keep all content equal distance from edges */
-.wrapper {
-    border: 1px black solid;
-    margin: 0 auto;
-    padding: 0 10px;
-    width: 95%;
-  }
-  
   /* Tablets and Landscape Phones */
   @media screen and (min-width: 769px) {
-      .wrapper {
-        border: 1px solid red;
-        padding: 0 20px;
-        width: 80%; 
-    }
+
   }
 
 /* Desktops */
 @media screen and (min-width: 1024px) {
-    .wrapper {
-        border: 1px solid red;
-        padding: 0 20px;
-        width: 80%; 
-    }
+
 }
