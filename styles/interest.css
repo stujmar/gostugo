@@ -65,6 +65,16 @@ body {
     height: 60%;
 }
 
+.input-parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-child {
+    margin: 0 0 10px 0;
+    height: 25px;
+}
+
 .results {
     display: inline-block;
 }
