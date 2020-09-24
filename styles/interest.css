@@ -67,10 +67,12 @@ body {
 
 .input-parent {
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
 .input-child {
+    width: 250px;
     margin: 0 0 10px 0;
     height: 25px;
 }
