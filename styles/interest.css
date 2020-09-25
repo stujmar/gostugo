@@ -74,6 +74,7 @@ body {
     height: 30px;
     font-weight: bold;
     font-size: 1.25rem;
+    border: 2px rgb(175, 205, 212) solid;
 }
 
 .results {
