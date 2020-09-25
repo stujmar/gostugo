@@ -59,6 +59,7 @@ body {
     padding: 10px;
     background: rgb(255, 219, 219);
     height: 60%;
+    font-size: 1.25rem;
 }
 
 .input-parent {
@@ -70,11 +71,14 @@ body {
 .input-child {
     width: 250px;
     margin: 0 0 10px 0;
-    height: 25px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 .results {
     display: inline-block;
+    font-size: 1.25rem;
 }
 
 #clear {
