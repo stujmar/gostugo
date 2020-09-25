@@ -9,10 +9,6 @@ body {
     background: rgb(239, 241, 217);
 }
 
-.wrapper {
-    width: 100%;
-}
-
 .page {
     padding-top: 20px;
     display:block;
