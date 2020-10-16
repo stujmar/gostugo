@@ -1,0 +1,10 @@
+body {
+    background: rgb(120, 161, 58);
+}
+
+.treepainter {
+    display: block;
+    margin: 50px auto;
+    outline:none;
+    border: 2px solid black;
+}
