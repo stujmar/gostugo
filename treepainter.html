@@ -10,32 +10,42 @@
 </head>
 <body>
     <script type="application/processing">
-        // Example: Two Car objects
         Car myCar1;
         Car myCar2;
-        Tree tree1;
-        Tree tree2;
+        Tree tree;
+        boolean treeMode;
         
         void setup() {
+          boolean treeMode = true;
           rectMode(CENTER);
           size(400,400);
           background(150,200,35);
           // Parameters go inside the parentheses when the object is constructed.
           myCar1 = new Car(color(255,0,0),0,100,2); 
           myCar2 = new Car(color(0,0,255),0,80,-1);
-          tree1 = new Tree(50,200,50);
-          tree2 = new Tree(25, 150, 25);
+          tree = new Tree(50,200,50);
+        }
+        
+        void mouseClicked() {
+          if (mouseX > 250 && mouseY < 20){
+            treeMode = !treeMode;
+          } else if (treeMode) {
+                float tempSize = random(5,25);
+              fill(random(80,150), random(220,255), random(90,110));
+              ellipse(mouseX , mouseY, tempSize, tempSize);
+          }
         }
         
         void draw() {
-          // clear button
+        
+          drawToggle(treeMode, "one", 250,0);
+          drawToggle(treeMode, "cluster", 325,0);
           fill(255);
           rect(5, 10, 75, 20);
           fill(0);
           textSize(12);
           text("clear", 5, 15);
         
-          
           fill(150);
           rect(width/2, 80, width + 5, 15);
           rect(width/2, 100, width + 5, 15);
@@ -46,8 +56,10 @@
         
           if (mousePressed && mouseX < 40 && mouseY < 20) {
             background(150,200,35);
+          } else if (mousePressed && mouseX > 250 && mouseY < 20){
+        
           } else if (mousePressed) {
-            tree2.cluster(mouseX, mouseY);  
+            tree.cluster(mouseX, mouseY);  
           }
         
         
@@ -97,14 +109,23 @@
             this.yPos = yPos;
           }
           
-           void paint() {
-            stroke(0);
-            fill(100,255,100);
+           void paint(int treeMode) {
+            if (treeMode == 0) {
+            //draw one tree
+            } else {
+            //draw a cluster
+            }
             ellipse(xPos,yPos,treeSize, treeSize);
           }
           
           void cluster(float xPos, float yPos) {
-            stroke(0);
+            if (treeMode) {
+              //float tempSize = random(5,25);
+              //fill(random(80,150), random(220,255), random(90,110));
+              //ellipse(xPos , yPos, tempSize, tempSize);
+            } else {
+                stroke(0);
+            int treeSize = 20;
             fill(100,255,100);
             for (int i = 0; i < 8; i++) {
               float swell = 0;
@@ -118,8 +139,24 @@
               fill(random(80,150), random(220,255), random(90,110));
               ellipse(xPos + (i * 10),yPos + pos + swell, r, r);
             }
+            }
+        
           }
         }
+        
+        void drawToggle(boolean treeMode, String name, int x, int y) {
+          rectMode(CORNER);
+          if ((treeMode && name == "one") || (!treeMode && name == "cluster")) {
+          fill(255,0,255);
+          } else {
+          fill(255);
+          }
+          rect(x,y, 75, 20);
+          fill(0);
+          text(name, x + 5, y + 15);
+          rectMode(CENTER);
+        }
+        
     </script>
     <canvas class="treepainter"> </canvas>
     <!-- <canvas data-processing-sources="./treepainter/tree_painter.pde"></canvas> -->
