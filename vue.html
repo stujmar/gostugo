@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/vue.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <title>Vue | Quiz</title>
+</head>
+<body>
+    <header class="flex-header">        
+        <p class="title-text">What do </p>
+        <div class="vue-logo"></div>
+        <p class="title-text">ue know?</p>
+    </header>
+    <div  class="quiz-body">
+      <div id="content"></div>
+    </div>
+    <footer class="footer"><a href="https://www.gostugo.com/">back to site</a></footer>
+    <script>
+        Vue.config.devtools = true
+        new Vue({ 
+          created: function () {
+            console.log('Vue created'); // Start here.
+            // Load the data.
+            this.data = data;
+            // Pick a random start question
+            let maxNum = this.data.length; // From the data length.
+            let randomSeed = Math.floor(Math.random() * (maxNum)); // Pick a random Id.
+            this.activeId = randomSeed; // Set first question as active id.
+          },
+          mounted: function(){
+            // this.message = "loaded";
+            console.log("Vue mounted");
+            this.setButtons();
+          },
+          methods: {
+            answerSubmit(answerId) {
+              console.log("you clicked a button");
+              if (answerId == this.activeId) {
+                console.log("It was a correct answer");
+                this.answered = [...this.answered, answerId];
+                if (this.answered.length == this.data.length) { //if we are out of questions
+                  this.message = "Out of Questions"
+                } else {
+                  this.message = "Correct! Loading new question...";
+                  setTimeout(() => {
+                      console.log("load new question");
+                      this.getRandomQuestion();
+                      this.setButtons();
+                    }, 1000);
+                }
+                
+              } else {
+                this.message = "Wrong Answer";
+                this.wrongGuesses = [...this.wrongGuesses, answerId];
+              }
+            },
+            getRandomQuestion() {
+              console.log("gettingRandomQuestion");
+
+              let randomSeed;
+              do  {
+                randomSeed = Math.floor(Math.random() * (this.data.length));
+              } while (this.answered.includes(randomSeed))
+              this.activeId = randomSeed;
+              console.log(randomSeed, this.activeId);
+            },
+            getWrongId() {
+              let idsToExclude = [this.activeId];
+              let randomId = Math.floor(Math.random() * (this.data.length));
+              while (idsToExclude.includes(randomId) || this.buttons.includes(randomId)) {
+                randomId = Math.floor(Math.random() * (this.data.length));
+              }
+            
+              return randomId;
+            },
+            shuffle(array) {
+                let currentIndex = array.length, temporaryValue, randomIndex;
+
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+
+                  // Pick a remaining element...
+                  randomIndex = Math.floor(Math.random() * currentIndex);
+                  currentIndex -= 1;
+
+                  // And swap it with the current element.
+                  temporaryValue = array[currentIndex];
+                  array[currentIndex] = array[randomIndex];
+                  array[randomIndex] = temporaryValue;
+                }
+
+                return array;
+            }
+            ,
+            setButtons() {
+              console.log("setting buttons");
+              // Get First Wrong Answer and put it in Buttons 
+              this.buttons = [this.getWrongId()];
+              console.log("first wrong one is set");
+              // Get Second Wrong Answer and put it in Buttons
+              this.buttons = [...this.buttons, this.getWrongId()];
+              console.log("Second wrong one is set");
+              // Get Right Answer and put it in Buttons.
+              this.buttons = [...this.buttons, this.data[this.activeId].id];
+              console.log("Right answer button is set");
+              // Shuffle Buttons.
+              this.buttons = this.shuffle(this.buttons);
+              // Reset Win message.
+              this.message = "";
+            }
+          },
+          data: () => ({ 
+        activeId: 0,
+        wrongGuesses: [],
+        answered: [],
+        data: [],
+        buttons: [],
+        message: ""
+      }),
+          template: `
+          <div>
+              <div v-if="this.answered.length < this.data.length"> 
+                <h3 class="question">{{data[activeId].question}}</h3>
+                <div class="buttonTray">
+                  <button class="answer" v-for="button in buttons" :key="button" v-on:click="answerSubmit(button)">{{this.data[button].answer}}</button> <br>
+                </div>
+              </div>
+              <div v-else>
+                <p class="winLose">You answered  {{this.answered.length}} questions with {{this.wrongGuesses.length}} wrong guesses.</p>
+              </div>
+              <div class="winLose">{{message}}</div>
+              </div>
+              
+          `
+        }).$mount('#content');
+      </script>
+</body>
+</html>
