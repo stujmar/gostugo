@@ -69,7 +69,6 @@ ul {
 
 .carousel-inner {
     text-align: center !important;
-
 }
 
 .bg-image {
@@ -90,6 +89,10 @@ ul {
 
 .horizontal {
   width: 80%;
+}
+
+.follow-me {
+    font-weight: 400;
 }
 
 .footer {
