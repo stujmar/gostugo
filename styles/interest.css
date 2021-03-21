@@ -12,7 +12,7 @@ body {
 .page {
     padding-top: 20px;
     display:block;
-    height: calc(100vh - 4rem);
+    height: calc(100vh - 16rem);
 }
 
 .head {
@@ -84,6 +84,29 @@ body {
 
 #clear {
     display: none;
+}
+
+.new-body {
+    background: white;
+    display: block;
+    padding: 15px;
+}
+
+.new-navbar {
+    margin-top: 15px;
+}
+
+.new-title {
+    color: darkblue;
+    font-size: 2rem;
+}
+
+.quick-links, .new-title {
+    display: inline-block;
+}
+
+.link {
+    margin-left: 10px;
 }
 
 .test-hr {
