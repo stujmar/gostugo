@@ -114,6 +114,16 @@ body {
    border: 1px solid rgba(255, 0, 0, 0.363);
 }
 
+.section-holder {
+    padding-top: 20px;
+}
+
+section {
+    margin: 10px auto 0;
+    border: 1px solid rgb(228, 228, 228);
+    max-width: 1000px;
+}
+
   /* Tablets and Landscape Phones */
   @media screen and (min-width: 769px) {
 
