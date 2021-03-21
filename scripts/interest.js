@@ -1,18 +1,30 @@
+/**
+ * This is a recursive method to figure out compond interest.
+ * @param {number} amount initial amound to invest.
+ * @param {number} times the amount of times the money will compond.
+ * @param {number} interest the percent interest that the money will increase/compound.
+ */
 const compound = (amount, times, interest) => {
     if (times > 0) {    
-        return compound((amount * ((interest/100)+1)), (times - 1), interest);
+        return compound((amount * ((interest/100)+1)), (times - 1), interest); // This is where we call the function again but with new inputs.
     }
     return amount;
-}
+};
 
-// const compound = (amount, times, interest) => {
-//     if (times > 0) {
-//         amount = amount * interest;
-//         times = times - 1;
-//         return compound(amount, times, interest);
-//     }
-//     return amount;
-// }
+/**
+ * This is a recursive method to figure out compond interest.
+ * @param {number} amount initial amound to invest.
+ * @param {number} times the amount of times the money will compond.
+ * @param {number} interest the percent interest that the money will increase/compound.
+ * @param {number} additionalInvestment the amount you are adding each interval.
+ */
+const compoundAddition = (amount, times, interest, additionalInvestment) => {
+    if (times > 0) {    
+        return compoundAddition((amount * ((interest/100)+1)) + additionalInvestment, (times - 1), interest); // This is where we call the function again but with new inputs.
+    }
+    return amount;
+};
+
 
 function persistence(num) {
     let count = 0;
@@ -49,7 +61,6 @@ document.getElementById("submit").addEventListener('click', (e) => {
     && typeof parseInt(interest) === 'number' && initial && times && interest) {
         document.getElementById('output').innerHTML = compound(initial, times, interest);
     } else {
-        console.log('here');
         document.getElementById('output').innerHTML = "please fill out all fields.";
     }
     
