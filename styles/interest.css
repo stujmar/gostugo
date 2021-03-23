@@ -10,9 +10,9 @@ body {
 }
 
 .page {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     display:block;
-    height: calc(100vh - 16rem);
+    /* height: calc(100vh - 16rem); */
 }
 
 .head {
@@ -116,6 +116,10 @@ body {
 
 .section-holder {
     padding-top: 20px;
+}
+
+.link-back {
+    text-align: right;
 }
 
 section {

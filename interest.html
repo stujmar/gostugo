@@ -60,9 +60,33 @@
         </div>
         <div class="section-holder">
             <section id="compound-interest">
-                <div>Compound Interest
-                </div>
-                <a href="#" class="link-back">back to top</a>
+                <div class="page">
+                    <div class="problem">
+                        <div class="prob-head">Recursion: Compound Interest</div>
+                        <div class="prob-body">
+                            const compound = (amount, times, interest) => { </br>
+                                <div style="padding-left: 15px">
+                                    if (times > 0) { </br>
+                                        <div style="padding-left: 15px">return compound((amount * ((interest/100)+1)), (times - 1), interest);</div>
+                                    } </br>
+                                    <div style="padding-left: 15px"> return amount; </div>
+                                </div>
+                            } 
+                        <hr class="test-hr">
+                        <form class="input-parent">
+                            <input id="initial" class="input-child" type="number" placeholder="Initial Amount">
+                            <input id="times" class="input-child" type="number" placeholder="Times to Compound">
+                            <input id="interest"class="input-child"  type="number" placeholder="Interest %">
+                            <input id="submit" class="input-child" type="submit" name="submit" value="Submit"> 
+                        </form>
+                            <div class="results">Results:</div>
+                            <div id="output" class="results"></div>
+                            <button id="clear" class="results">Clear</button>
+                        </div>
+                    </div>
+                    <div class="link-back">
+                        <a href="#">back to top</a>
+                    </div>
             </section>
             <section id="monthly-investment">
                 <div>Monthly Investment</div>
