@@ -17,12 +17,15 @@
       new Vue({ 
         created: function () {
           console.log('Vue created'); // Start here.
-          this.words = words; // Load the words.
+          this.words = words.filter(word => word.length === 5 );
         },
         mounted: function(){
           console.log("Vue mounted");
         },
         methods: {
+          handleLength(e) {
+            this.words = words.filter(word => word.length == parseInt(e.target.value));
+          } ,
           searchParent() {
             this.search()
           },
@@ -91,6 +94,7 @@
             this.results = bufferedResults;
           }
           
+          
         },
         data: () => ({
       isThinking: false,
@@ -110,7 +114,7 @@
             <form class="flex flex-col mt-4 items-start gap-y-2">
               <label>
                 Word Length
-                <input class="ml-2 p-0 pl-2 border-2 border-green-300 focus:outline-none" type="number" v-model="wordLength" min="1" max="10" value="6">
+                <input class="ml-2 p-0 pl-2 border-2 border-green-300 focus:outline-none" v-on:change="handleLength" type="number" v-model="wordLength" min="1" max="10" value="6">
               </label>
               <label>
                 Must contain <span class="text-gray-500 text-sm">in any order<span><br>
