@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
+  <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x"></script>
+  <title>Wordle Hack</title>
+</head>
+  <body>
+      <div id="content"></div>
+    <script src="wordl.js"></script>
+    <script>
+      Vue.config.devtools = true
+      new Vue({ 
+        created: function () {
+          console.log('Vue created'); // Start here.
+          this.words = words; // Load the words.
+        },
+        mounted: function(){
+          console.log("Vue mounted");
+        },
+        methods: {
+          searchParent() {
+            this.search()
+          },
+          search() {
+            const checkMustContain = (word) => {
+              let missingLetter;
+              if (this.mustContain.length > 0) {
+                missingLetter = false
+                this.mustContain.split('').forEach(letter => {
+                if (word.indexOf(letter.toLowerCase()) === -1) {
+                  missingLetter = true;
+                }
+              }
+              );
+              return !missingLetter
+            } else {
+              return true;
+            }
+          }
+
+          const checkExclude = (word) => {
+            let shouldExclude = false;
+            if (this.exclude.length == 1 ) {
+              return !word.includes(this.exclude);
+            }
+            if (this.exclude.length > 0) {
+              this.exclude.split('').forEach(letter => {
+                if (word.indexOf(letter.toLowerCase()) !== -1) {
+                  shouldExclude = true;
+                }           
+              });
+            } else {
+              return true;
+            }
+            return !shouldExclude;
+          }
+
+          const checkStartsWith = (word) => {
+            if (this.startsWith.length > 0) {
+              return word.startsWith(this.startsWith.toLowerCase());
+            } else {
+              return true;
+            }
+          }
+
+          const checkEndsWith = (word) => {
+            if (this.endsWith.length > 0) {
+              return word.endsWith(this.endsWith.toLowerCase());
+            } else {
+              return true;
+            }
+          }
+            this.results = [];
+            let bufferedResults = []
+          
+            this.words.forEach(word => {
+              if (word.includes(this.containsSeq) &&
+              word.length == this.wordLength &&
+              checkMustContain(word) &&
+              checkExclude(word) &&
+              checkStartsWith(word) &&
+              checkEndsWith(word)) {
+                bufferedResults.push(word);
+              }
+            })
+            this.results = bufferedResults;
+          }
+          
+        },
+        data: () => ({
+      isThinking: false,
+      words: [],
+      results: "",
+      wordLength: 5,
+      mustContain: "",
+      exclude: "",
+      startsWith: "",
+      endsWith: "",
+      containsSeq: "",
+    }),
+        template: `
+        <div >
+          <div class="m-6 container mb-0 px-2 md:px-12 mx-auto w-max lg:px-48">
+            <h2 class="text-xl font-bold">Wordle Hack</h2>
+            <form class="flex flex-col mt-4 items-start gap-y-2">
+              <label>
+                Word Length
+                <input class="ml-2 p-0 pl-2 border-2 border-green-300 focus:outline-none" type="number" v-model="wordLength" min="1" max="10" value="6">
+              </label>
+              <label>
+                Must contain <span class="text-gray-500 text-sm">in any order<span><br>
+                <input class="p-0 pl-2 border-2 border-green-300 focus:outline-none" v-model="mustContain" type="text" >
+                </label>
+                <label>
+                Letters to exclude <br>
+                <input class="p-0 pl-2 border-2 border-green-300 focus:outline-none" v-model="exclude" type="text" value="">
+              </label>
+              <label>
+                Starts with <br>
+                <input class="p-0 pl-2 border-2 border-green-300 focus:outline-none" v-model="startsWith" type="text" value="">
+              </label>
+              <label>
+                Ends with <br>
+                <input class="p-0 pl-2 border-2 border-green-300 focus:outline-none" v-model="endsWith" type="text" value="">
+              </label>
+              <label>
+                Contains in order <span class="text-gray-500 text-sm">i.e. "ph" in elephant<span><br>
+                <input class="p-0 pl-2 border-2 border-green-300 focus:outline-none" type="text" v-model="containsSeq" value="">
+              </label>
+              <button class="py-0 px-2 mt-4 mb-6 border-2 border-green-300 focus:outline-none" type="button" @click="searchParent">Search</button>
+            </form>
+            </div>
+            <div class="container -mt-2 mx-auto">
+              <p class="text-gray-800 text-center text-sm">{{results.length}} results</p>
+              <div v-if="isThinking">
+                <img class="block mx-auto" width="250px" src="./loading.gif" />
+              </div>
+            <ul v-show="!isThinking" class="flex flex-wrap mt-4 text-gray-400">
+              <li class="mx-2" v-for="word in results" :key="word">
+                {{ word }}
+              </li>
+            </ul>
+            </div>
+          </div>
+        `
+      }).$mount('#content');
+    </script>
+  </body>
+</html>
