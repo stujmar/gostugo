@@ -12,6 +12,7 @@
   <body>
       <div id="content"></div>
     <script src="wordl.js"></script>
+    <script src="answers.js"></script>
     <script>
       Vue.config.devtools = true
       new Vue({ 
@@ -23,10 +24,22 @@
           console.log("Vue mounted");
         },
         methods: {
+          getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          },
           handleLength(e) {
             this.words = words.filter(word => word.length == parseInt(e.target.value));
           } ,
           searchParent() {
+            let randomIndex = Math.floor(Math.random() * (answers.length - 1 + 1)) + 0
+            
+            console.log(this.wordToGuess.word + ":", this.wordToGuess.definition);
+            if (answers[randomIndex]) {
+              this.wordToGuess = answers[randomIndex]
+            } else {
+              console.log(randomIndex, "didnt work")
+            }
+  
             this.search()
           },
           search() {
@@ -83,7 +96,6 @@
           
             this.words.forEach(word => {
               if (word.includes(this.containsSeq) &&
-              word.length == this.wordLength &&
               checkMustContain(word) &&
               checkExclude(word) &&
               checkStartsWith(word) &&
@@ -97,6 +109,7 @@
           
         },
         data: () => ({
+      wordToGuess: answers[Math.floor(Math.random() * (answers.length - 1 + 1)) + 0],
       isThinking: false,
       words: [],
       results: "",
