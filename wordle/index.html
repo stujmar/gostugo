@@ -29,8 +29,8 @@
           },
           handleLength(e) {
             this.words = words.filter(word => word.length == parseInt(e.target.value));
-          } ,
-          searchParent() {
+          },
+          buildPuzzle() {
             let randomIndex = Math.floor(Math.random() * (answers.length - 1 + 1)) + 0
             
             console.log(this.wordToGuess.word + ":", this.wordToGuess.definition);
@@ -39,7 +39,19 @@
             } else {
               console.log(randomIndex, "didnt work")
             }
-  
+            let puzzle = [];
+            let id = 0
+            this.wordToGuess.word.split('').forEach(letter => {
+             puzzle.push({
+               id: id,
+               letter: letter,
+               status: "white"
+             })
+              id++;
+            });
+            this.puzzle = puzzle;
+          },
+          searchParent() {
             this.search()
           },
           search() {
@@ -112,6 +124,7 @@
       wordToGuess: answers[Math.floor(Math.random() * (answers.length - 1 + 1)) + 0],
       isThinking: false,
       words: [],
+      puzzle: [],
       results: "",
       wordLength: 5,
       mustContain: "",
@@ -150,6 +163,7 @@
                 <input class="p-0 pl-2 border-2 border-green-300 focus:outline-none" type="text" v-model="containsSeq" value="">
               </label>
               <button class="py-0 px-2 mt-4 mb-6 border-2 border-green-300 focus:outline-none" type="button" @click="searchParent">Search</button>
+              <button class="py-0 px-2 mb-6 border-2 border-green-300 focus:outline-none" type="button" @click="buildPuzzle">New Game</button>
             </form>
             </div>
             <div class="container -mt-2 mx-auto">
@@ -157,8 +171,14 @@
               <div v-if="isThinking">
                 <img class="block mx-auto" width="250px" src="./loading.gif" />
               </div>
+            <ul class="flex w-12 mt-4 text-gray-400">
+              <li class="mx-2 px-1" v-for="letter in puzzle" :key="letter.id">
+                <input class="w-12" type="text" v-bind:value="letter.letter"></input>
+              </li>
+            </ul>
             <ul v-show="!isThinking" class="flex flex-wrap mt-4 text-gray-400">
               <li class="mx-2" v-for="word in results" :key="word">
+
                 {{ word }}
               </li>
             </ul>
