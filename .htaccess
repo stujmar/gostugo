@@ -14,7 +14,7 @@ Options -Indexes
 Options +FollowSymLinks
 
 ## Let our index.php file handle 404 errors.
-ErrorDocument 404 /index.php
+ErrorDocument 404 /404.html
 
 ## Force simple error message asset files.
 <FilesMatch "\.(ico|png|jpg|css|js)$">

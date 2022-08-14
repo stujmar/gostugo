@@ -1,0 +1,97 @@
+/* Cleaning up CSS for pages not build with all the tutorial CDNs */
+.clean-nav {
+  border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.fouro-wrapper {
+  width: 90%;
+  margin: 25px auto 15px;
+  text-align: center;
+}
+
+.fouro-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.fouro-wrapper p {
+  margin: 0 auto;
+  max-width: 730px;
+}
+
+.fouro-link, .fouro-link:active, .fouro-link:visited {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #8ac756;
+}
+
+.fouro-link:hover {
+  color: #a7e96d;
+}
+
+.fouro-cards {
+  margin-top: 30px;
+}
+
+.fouro-card {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 5px auto 20px;
+}
+
+.fouro-card:hover {
+  background: #f5f5f5;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+.fouro-image {
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.fouro-image svg {
+  stroke: #8ac756;
+}
+
+.fouro-content {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+
+
+/*---Tailwind Media Queries --*/
+
+/* 'sm': '640px', */
+@media (min-width: 640px) {
+  .fouro-heading {
+
+    font-size: 2.5rem;
+
+  }
+}
+
+/* 'md': '768px', */
+@media (min-width: 768px) {
+  .fouro-card {
+    max-width: 768px
+  }
+}
+
+/* 'lg': '1024px', */
+@media (min-width: 1024px) {
+}
+
+/* 'xl': '1280px', */
+@media (min-width: 1280px) {
+}
+
+/* '2xl': '1536px', */
+@media (min-width: 1536px) {
+}
