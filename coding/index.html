@@ -4,9 +4,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Coding</title>
+  <link href="/styles/styles.css" rel="stylesheet">
+  <link href="/styles/404.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+  <title>Coding Projects</title>
 </head>
 <body>
-  
+  <!-- Navigation -->
+	<nav class="navbar navbar-expand-md navbar-light sticky-top clean-nav">
+		<div class="container-fluid">
+			<a href="index.html" class="navbar-brand"><img class="gostugo" src="/img/logo.png" alt="Go Stu Go logo"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a href="/" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="./projects.html" class="nav-link">Projects</a>
+					</li>
+					<li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+					</li>
+				</ul>
+				</div>
+			</div>
+	</nav>
+  <div class="fouro-wrapper">
+    <h2 class="fouro-heading">Coding Projects.</h2>
+    <p class="lead text-muted">You have found a list of my coding projects. Check out one of the project links bellow.</p>
+  </div>
+  <div class="fouro-cards">
+    <!--- Wordle Card -->
+    <a href="/coding/wordle"class="fouro-card">
+      <div class="fouro-image">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+        </svg>
+      </div>
+      <div class="fouro-content">Wordle Hack: A fun little tool I made that gives you a secret edge when guessing wordle words.</div>
+    </a>
+    <!--- Wave Function Card -->
+    <a href="/coding/hike" class="fouro-card">
+      <div class="fouro-image">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+        </svg>
+      </div>
+      <div class="fouro-content">Wave Function Collapse: A series of tests I did to use the wave funciton collapse algorithm to generate images and maps.</div>
+    </a>
+    <!--- Card -->
+    <!-- <div class="fouro-card">
+      <div class="fouro-image"></div>
+      <div class="fouro-descript"></div>
+    </div> -->
+  </div>
+
 </body>
 </html>
