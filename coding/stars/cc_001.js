@@ -5,7 +5,7 @@ let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 
 let width = windowWidth;
-let height = windowHeight;
+let height = windowHeight - 5;
 let speed = 15;
 
 class Star {
