@@ -13,7 +13,14 @@
   <script src="./snakeGame.js" defer></script>
   <title>Snake Game</title>
 </head>
-<body style="background: rgb(55,55,55);">
+<body style="background: rgb(55,55,55); margin:0;">
+  <a href="/coding" style="
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.8);
+  display:block;
+  width: 100%;
+  position: fixed;
+  padding:5px;"><- back to coding projects</a>
   <div class="hud-wrapper">
     <!-- Left Side -->
     <div class="score-wrapper">
@@ -42,7 +49,8 @@
     gap: 10px;
     justify-content: space-between;
     font-family: 'Press Start 2P', cursive;
-    margin: 10px auto 0;
+    padding: 35px 20px;
+    margin: 0 auto 0;
   }
 
   .score-wrapper {
@@ -57,7 +65,7 @@
 
   @media only screen and (min-width: 600px) {
   .hud-wrapper {
-    padding: 10px;
+    padding: 40px 10px;
     flex-direction: row;
   }
   .score-wrapper {
