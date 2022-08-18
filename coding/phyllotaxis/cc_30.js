@@ -38,6 +38,7 @@ function toggleSettings() {
 }
 
 function start() {
+  document.getElementById('welcome').style.display = 'none';
   if (!go) {
     startBtn.innerHTML = 'Stop';
     angle = slider.value/10;
