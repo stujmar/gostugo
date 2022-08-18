@@ -3,6 +3,7 @@
   border-bottom: 1px solid rgb(201, 201, 201);
 }
 
+
 .coding-wrapper {
   width: 90%;
   margin: 25px auto 15px;
@@ -33,6 +34,12 @@
 
 .coding-cards {
   margin-top: 30px;
+}
+
+a:hover {
+  /* border: 4px solid purple; */
+  text-decoration: none;
+
 }
 
 .coding-card {
