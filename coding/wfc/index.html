@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Go Stu Go</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+	<link href="/styles/styles.css" rel="stylesheet">
+	<link href="/styles/coding.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+	<nav class="navbar navbar-expand-md navbar-light sticky-top clean-nav" style="background:white;">
+		<div class="container-fluid">
+			<a href="../index.html" class="navbar-brand"><img class="gostugo" src="/img/logo.png" alt="Go Stu Go logo"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div style="background:white;" class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a href="/" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/projects" class="nav-link">Projects</a>
+					</li>
+					<li class="nav-item">
+                        <a href="/contact.html" class="nav-link">Contact</a>
+					</li>
+				</ul>
+				</div>
+			</div>
+	</nav>
+  <div class="coding-wrapper">
+    <h2 class="coding-heading">Wave Function Collapse.</h2>
+    <p class="lead text-muted">I started playing with a wave function collapse algorithm to rotate and connect tiles.</p>
+    <a href="/coding/index.html" class="back-button">back to coding projects</a>
+  </div>
+  <div class="coding-cards wfc-cards">
+    <!--- Grow Card -->
+    <a href="/coding/grow" class="wfc-card">
+        <img class="coding-image" src="../thumbs/grow.png">
+        <div class="coding-content"><h3>Plant Growing</h3> This was my first attempt at wave function collapse. It's a test trying to connect plant stems using a simple ruleset.</div>
+    </a>
+    <!--- Catdog Card -->
+    <a href="/coding/catdog" class="wfc-card">
+        <img class="coding-image" src="../thumbs/catdog.png">
+        <div class="coding-content"><h3>Catdog</h3>My second test is better at restarting if it approaches failure connecting. It also runs a pathfinding test at the end and clears all tiles that don't connect.</div>
+    </a>
+    <!--- Hike Card -->
+    <a href="/coding/hike" class="wfc-card">
+        <img class="coding-image" src="../thumbs/wfc.png">
+        <div class="coding-content"><h3>Hiking</h3> This was my final test before switching to working in C#/Unity. I've started playing with the idea of making a randomly generated maze or map, then checking if it is solvable.</div>
+    </a>
+  </div>
+
+</body>
+</html>
