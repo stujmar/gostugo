@@ -1,40 +1,21 @@
 console.log('hello from the grand hotel');
 
-class Guest {
-  constructor(id, color, keycard=null) {
-    this.id = id;
-    this.color = color;
-    this.keycard = keycard;
-  }
-}
-
-class Room {
-  constructor(id, vacant, guest, type) {
-    this.id = id;
-    this.vacant = vacant;
-    this.guest = guest;
-    this.type = type;
-  }
-}
-
-class Reservation {
-  constructor(id, guestId, roomId, date) {
-    this.id = id;
-    this.date = date;
-    this.guestId = guestId;
-    this.room = roomId;
-  }
-}
-
 // Global variables
 let updated = true;
+let clouds = [];
+let time = 0;
+let rate = 24;
 
 // Hotel
 DIM = 9;
 GRID_SIZE = DIM * (DIM *2);
 CELL_SIZE = 20;
 rooms = [];
-let offset =  (window.innerWidth - (DIM * CELL_SIZE)) / 2;
+let maxWidth = 500;
+let offset = (window.innerWidth - (DIM * CELL_SIZE)) / 2;
+let canvasWidth = window.innerWidth < maxWidth ? window.innerWidth : maxWidth;
+let canvasHeight = (DIM*CELL_SIZE*2) + 50;
+let paddingX =  (canvasWidth - (DIM * CELL_SIZE)) / 2;
 
 // Guests
 let guests = [];
@@ -59,24 +40,29 @@ function fullCycle() {
   drawFromBottom();
 }
 
+function preload() {
+  console.log('preloading');
+  cloudImg = loadImage('./assets/cloud.svg');
+}
+
 function setup() {
   console.log("day:", day);
-  // let canvas = createCanvas(windowWidth, windowHeight);
-  let canvas = createCanvas(DIM*CELL_SIZE, DIM*CELL_SIZE*2);
+  frameRate(48);
+  let canvas = createCanvas(DIM*CELL_SIZE + (paddingX * 2), canvasHeight);
   canvas.parent('canvas-wrapper');
 
-  background(100);
+  for (let i=0; i < 10; i++) {
+    clouds.push(
+      new Cloud(
+        cloudImg, random(0, canvasWidth), 
+        random(0,canvasHeight-200),
+        random(.1,1),
+        random(100,150)
+        ));
+  }
   
-  // Create guests
-  // let firstGuestColor = color(random(50,255), random(50,255), random(50,255));
-  // for (let i = 0; i < guestCount; i++) {
-  //   let guestColor = firstGuestColor;
-  //   guests.push(new Guest(i, guestColor));
-  // }
-
-  // console.log(guests)
-  // Create rooms
-  for (let i = 0; i < GRID_SIZE; i++) {
+  for (let i = 0;
+  i < GRID_SIZE; i++) {
     let roomNumber = i;
     let vacant = true;
     let guest = null;
@@ -86,11 +72,10 @@ function setup() {
   fillVacancies();
   checkinGuests();
   drawFromBottom();
-  setInterval(fullCycle, 1500);
+  // setInterval(fullCycle, 1500);
 }
 
 function fillVacancies() {
-  // console.log("fillVacancies:", reservations);
   // Create reservations for empty rooms
   let vacantRooms = getVacantRooms();
   let currentColor = color(random(50,255), random(50,255), random(50,255));
@@ -109,11 +94,12 @@ function fillVacancies() {
 
 function drawFromBottom() {
   index = 0;
+  // paddingX = 0;
   offset = 0;
   for (let rowY = (DIM*2); rowY > 0; rowY--) {
     for (let columnX = 0; columnX < DIM; columnX++) {
 
-      let positionX = 0 + offset + (columnX*CELL_SIZE);
+      let positionX = 0 + paddingX + (columnX*CELL_SIZE);
       let positionY = (rowY*CELL_SIZE) - CELL_SIZE + (offset/2);
       let room = rooms[index];
       
@@ -139,6 +125,11 @@ function drawFromBottom() {
       // fill(0)
       // noStroke();
       // text(index, positionX, positionY + CELL_SIZE);
+      
+      // draw lobby
+      fill(241,87,88);
+      rect(paddingX-2.5, CELL_SIZE*DIM*2 + 2, CELL_SIZE*DIM + (5), 50);
+      rect(paddingX-2.5, 0, CELL_SIZE*DIM + (5), 20);
       index++;
     }
   }
@@ -155,22 +146,9 @@ function getVacantRooms() {
   return vacantRooms;
 }
 
-// function moveGuest(guestID, roomID) {
-//   let oldRoom = ""; // find the old room by guestID
-//   let guest = ""; // find the guest by guestID
-//   let newRoom = ""; // find the new room by roomID
-
-//   oldRoom.guest = null; // set the old room to vacant
-//   oldRoom.vacant = true; // set the old room to vacant
-
-//   newRoom.guest = guest; // set the new room to the guest
-//   newRoom.vacant = false; // set the new room to not vacant
-  
-// }
-
 function mousePressed() {
   console.log("mousePressed");
-  fullCycle();
+  // fullCycle();
 }
 
 // Checkin Guests
@@ -215,19 +193,26 @@ function clearRooms() {
 
 
 function draw() {
-  // {
-  //   sleep(5000).then(function() {
-  //     fullCycle();
-  //   })}
-  // call function every 4 seconds
+  rate = document.getElementById("timeSlider").value;
+  background(128, 219, 255);
+  // console.log(clouds)
+  // console.log(time, rate);
+  if (time % ceil(rate/3) == 0 && time != 0 && rate != 240) {
+    fullCycle();
+  }  
+  if (time % ceil(rate/50) == 0 && rate != 240) {
+    clouds.forEach((cloud) => {
+      cloud.move();
+    });
+  } 
+  
+  clouds.forEach((cloud) => {
+    // console.log(cloud)
+    cloud.draw();
+  });
+  drawFromBottom();
+  time++;
 
-
-  // if(!updated) {
-  //   console.log("updating")
-  //   // checkinGuests();
-  //   // drawFromBottom();
-  //   updated = true;
-  // }
 }
 
 function getNewGuestId() {
