@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Go Stu Go</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<link href="/styles/styles.css" rel="stylesheet">
+	<link href="/styles/archive.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+	<nav class="navbar navbar-expand-md navbar-light sticky-top clean-nav" style="background:white;">
+		<div class="container-fluid">
+			<a href="../index.html" class="navbar-brand"><img class="gostugo" src="/img/logo.png" alt="Go Stu Go logo"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div style="background:white;" class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a href="/" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/projects" class="nav-link">Projects</a>
+					</li>
+					<li class="nav-item">
+                        <a href="/contact.html" class="nav-link">Contact</a>
+					</li>
+				</ul>
+				</div>
+			</div>
+	</nav>
+  <div class="coding-wrapper">
+    <h2 class="coding-heading">Coding Archives.</h2>
+    <p class="lead text-muted">You have found an extensive list of my coding projects.<br> Check out one of the project links below.</p>
+  </div>
+  <ol class="list" x-data="{ projectsPrimary }">
+    <template x-for="project in projectsPrimary">
+      <li class="item">
+        <a :href="project.link">
+          <h2 class="headline" x-text="project.title"></h2>
+          <span x-text="project.description"></span>
+        </a>
+      </li>
+    </template> 
+  </ol>
+
+
+</body>
+</html>
+
+<script>
+  projectsPrimary = [
+    {
+      title: "Wordle Hack",
+      description: "A tool that gives you a secret edge when guessing Wordle words. Made with a Vue CDN.",
+      link: "/coding/wordle/?archive=true",
+      image: "./thumbs/wordle.png"
+    },
+    {
+      title: "Treelapse",
+      description: "React/Redux web app where you can plant trees. Lots of interesting CSS and component structuring.",
+      link: "http://www.treelapse.app",
+      image: "./thumbs/treelapse.png"
+    },
+    {
+      title: "Hotdogger",
+      description: "A vanilla JS incremental clicker game. Made before I learned any frameworks.",
+      link: "https://hotdogger.io/",
+      image: "./thumbs/hotdog.png"
+    },
+    {
+      title: "Wave Function Collapse",
+      description: "A series of tests using the wave function collapse algorithm to generate images and maps.",
+      link: "/coding/wfc",
+      image: "./thumbs/wfc.png"
+    },
+    {
+      title: "Grand Hotel",
+      description: "Interactive model of a hotel inspired by Hilbert's Paradox of the Grand Hotel.",
+      link: "/coding/grand-hotel",
+      image: "./thumbs/grand-hotel.png"
+    },
+    {
+      title: "Phyllotaxis",
+      description: "Simulate the seed patterns of a sunflower. Some interesting math on a html canvas.",
+      link: "/coding/phyllotaxis",
+      image: "./thumbs/phyllotaxis.png"
+    },
+    {
+      title: "Tree Painter Classic",
+      description: "A predecessor to Treelapse, this is a simple test made in Processing.",
+      link: "/coding/treepainter",
+      image: "./thumbs/treepainter.png"
+    },
+    {
+      title: "Stars",
+      description: "An html canvas with a Star Trek like journey through the stars.",
+      link: "/coding/stars",
+      image: "./thumbs/stars.png"
+    },
+    {
+      title: "Snake",
+      description: "Just a fun interpretation of the game \"snake\". (requires keyboard)",
+      link: "/coding/snake",
+      image: "./thumbs/snake.png"
+    }
+  ]
+</script>

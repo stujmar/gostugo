@@ -29,17 +29,39 @@
   <script src="./catdog.js" defer></script>
 </head>
 <body style="margin:0; padding-top: 20px; background: rgb(76, 191, 237)">
-  <a href="/coding/wfc" style="
-  font-family: monospace;
-  background: rgba(3, 143, 131, 0.5);
-  display:block;
-  text-decoration: underline;
-  width: 100%;
-  top:0;
-  position: fixed;
-  padding:5px;"><- back to wave function collapse</a>
+  <a href="/coding/wfc" class="back-button">
+    <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </a>
   
   <div id="catdog"></div>
   <div style="font-size: 16px; margin:18px auto; max-width: 500px;">This test is much less likely to fail than the <a href="/coding/grow">plant growing test</a>. It will even start over if it messes up too badly trying to connect the catdogs. It also tries its best to not have the catdogs run off the edge of the screen. I had the idea of some pathfinding to confirm that it is a catdog, then clear all the tiles that aren't a catdog. I could do this under the hood then just draw the catdog but I thought it was cool to see the pathfinding visually.</div>
 </body>
 </html>
+
+<!-- Styles for the back button -->
+<style>
+  .back-button {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: rgb(77, 77, 77);
+    top: 7px;
+    left: 7px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: monospace;
+    font-weight: bold;
+    background: #b5e8f8;
+    width: max-content;
+  }
+  
+  .back-button:hover {
+    background: #a8dff0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+</style>

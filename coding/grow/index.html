@@ -28,14 +28,36 @@
   <script src="./grow.js" defer></script>
 </head>
 <body style="margin:0;padding-top: 20px;background: rgb(186, 248, 150)">
-  <a href="/coding/wfc" style="
-  font-family: monospace;
-  background: rgba(3, 143, 56, 0.5);
-  display:block;
-  text-decoration: underline;
-  width: 100%;
-  top:0;
-  position: fixed;
-  padding:5px;"><- back to wave function collapse</a>
+  <a href="/coding/wfc" class="back-button">
+    <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </a>
 </body>
 </html>
+
+<!-- Styles for the back button -->
+<style>
+  .back-button {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: rgb(77, 77, 77);
+    top: 7px;
+    left: 7px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: monospace;
+    font-weight: bold;
+    background: #b5e8f8;
+    width: max-content;
+  }
+  
+  .back-button:hover {
+    background: #a8dff0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+</style>

@@ -1,0 +1,130 @@
+/* Cleaning up CSS for pages not build with all the tutorial CDNs */
+.clean-nav {
+  border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.coding-wrapper {
+  width: 90%;
+  margin: 25px auto 15px;
+  text-align: center;
+}
+
+.coding-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+
+.back-button, .back-button:active, .back-button:visited, .back-button:hover {
+  text-decoration: underline;
+}
+
+
+/*---Tailwind Media Queries --*/
+
+/* 'sm': '640px', */
+@media (min-width: 640px) {
+}
+
+/* 'md': '768px', */
+@media (min-width: 768px) {
+}
+
+/* 'lg': '1024px', */
+@media (min-width: 1024px) {
+}
+
+/* 'xl': '1280px', */
+@media (min-width: 1280px) {
+}
+
+/* '2xl': '1536px', */
+@media (min-width: 1536px) {
+}
+
+:root {
+  --bg: #fdfdfd;
+  --highlight1: #63b931;
+  --highlight2: #FFEDBC;
+  --color: #1a1e24;
+  --font-number: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+  --font-head: "Space Mono", Consolas, Menlo, Monaco, "Courier New", monospace;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 2rem 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 3rem auto 0;
+  padding: 0;
+}
+
+.item {
+  display: block;
+  position: relative;
+  clear: both;
+  counter-increment: list;
+  padding-bottom: 2rem;
+  /* padding-right: .5rem; */
+  font-size: 1.1rem;
+  line-height: 1.375;
+  position: relative;
+  width: 400px;
+}
+
+.item a {
+  position: absolute;
+  padding-left: 4rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.item h2 {
+  font-size: 1.5rem;
+  /* margin-left: 4rem; */
+}
+
+.item:before {
+  font: bold 2.25rem/1 var(--font-number);
+  content: counter(list);
+  width: 3rem;
+  height: 3rem;
+  float: left;
+  margin: 0 1.5rem 0.75rem 0;
+  color: var(--bg);
+  background: var(--highlight1) linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+  text-shadow: 0 0 2px var(--highlight1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  shape-outside: ellipse();
+  z-index: 1;
+}
+
+.item:after {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: var(--highlight1);
+  z-index: -1;
+  border-top-left-radius: 3px;
+}
+
+
+.headline {
+  padding: 0rem 0 0 0;
+  margin: 0 0 .33rem 0;
+  font: normal 1.75rem var(--font-head);
+}

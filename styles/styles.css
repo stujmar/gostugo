@@ -133,7 +133,7 @@ ul {
         width: 90%;
     }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
     .wrapper {
         max-width: 1200px;
         width: 90%;
@@ -194,8 +194,8 @@ Small (sm) devices (landscape phones, 576px and up)
 Medium (md) devices (tablets, 768px and up)
 @media (min-width: 768px) { ... }
 
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
+Large (lg) devices (desktops, 1024px and up)
+@media (min-width: 1024px) { ... }
 
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }

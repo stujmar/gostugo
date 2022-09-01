@@ -10,14 +10,11 @@
     <title>Tree Painter</title>
 </head>
 <body style="margin:0;">
-  <a href="/coding" style="
-  font-family: monospace;
-  background: rgba(255, 255, 255, 0.8);
-  display:block;
-  width: 100%;
-  top:0;
-  position: fixed;
-  padding:5px;"><- back to coding projects</a>
+  <a href="/coding" class="back-button">
+    <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </a>
     <script type="application/processing">
         Car myCar1;
 Car myCar2;
@@ -177,3 +174,26 @@ void drawFromArray(){
     <!-- <canvas data-processing-sources="./treepainter/tree_painter.pde"></canvas> -->
 </body>
 </html>
+
+<style>
+  .back-button {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: rgb(11, 11, 85);
+    top: 7px;
+    left: 7px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: monospace;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.7);
+    width: max-content;
+  }
+
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+</style>
