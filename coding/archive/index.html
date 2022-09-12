@@ -52,6 +52,7 @@
   <ol class="list" x-data="{ projectsPrimary }">
     <template x-for="project in projectsPrimary">
       <li class="item">
+        <div class="item-number"></div>
         <a :href="project.link">
           <div class="top-row">
             <h2 class="headline" x-text="project.title"></h2>
@@ -75,6 +76,13 @@
 <script>
   projectsPrimary = [
     {
+      title: "Go Stu Go",
+      description: "My personal website built from scratch with little bits of bootstrap, fontawesome and alpineJS. How are you enjoying it so far?",
+      link: "/",
+      image: "./thumbs/wordle.png",
+      tech: [{name: "HTML/CSS", color: "#888"}]
+    },
+    {
       title: "Wordle Hack",
       description: "A tool that gives you a secret edge when guessing Wordle words. Made with a Vue CDN.",
       link: "/coding/wordle/?archive=true",
@@ -83,10 +91,10 @@
     },
     {
       title: "Treelapse",
-      description: "React/Redux web app where you can plant trees. Lots of interesting CSS and component structuring.",
+      description: "React/Redux web app where you can plant trees. Lots of interesting CSS and component structuring. Deployed via Netlify.",
       link: "http://www.treelapse.app",
       image: "./thumbs/treelapse.png",
-      tech: [{name: "React", color: "#00d8ff"}, {name: "Redux", color: "#00d8ff"}]
+      tech: [{name: "React", color: "#00d8ff"}, {name: "Redux", color: "#00d8ff"}, {name: "Tailwind", color: "#ff64d5"}]
     },
     {
       title: "Hotdogger",
