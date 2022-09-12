@@ -58,6 +58,12 @@ a:hover {
   text-decoration: none;
 }
 
+.secondary-header {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+}
+
 .list {
   list-style: none;
   display: flex;
@@ -66,7 +72,13 @@ a:hover {
   justify-content: center;
   width: 100%;
   margin: 3rem auto 0;
-  padding: 0 1rem 5rem ;
+  padding: 0 1rem 3rem ;
+}
+
+.list-secondary {
+  flex-direction: column;
+  width: max-content;
+  margin: 48px auto 0;
 }
 
 .item {
@@ -76,6 +88,17 @@ a:hover {
   padding-bottom: 2rem;
   /* padding-right: .5rem; */
   font-size: 1.1rem;
+  line-height: 1.375;
+  position: relative;
+  width: 400px;
+}
+
+.item-secondary {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  /* padding-right: .5rem; */
+  font-size: .9rem;
   line-height: 1.375;
   position: relative;
   width: 400px;
@@ -132,8 +155,15 @@ a:hover {
   font: normal 1.75rem var(--font-head);
 }
 
+.headline-secondary {
+  padding: 0rem 0 0 0;
+  margin: 0 0 .33rem 0;
+  font: normal 1.2rem var(--font-head);
+}
+
 .top-row {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
 }
 

@@ -46,8 +46,8 @@
 			</div>
 	</nav>
   <div class="coding-wrapper">
-    <h2 class="coding-heading">Coding Archives.</h2>
-    <p class="lead text-muted">You have found an extensive list of my coding projects.<br> Check out one of the project links below.</p>
+    <h2 class="coding-heading">Featured Projects.</h2>
+    <p class="lead text-muted">You have found an extensive list of my coding projects.</p>
   </div>
   <ol class="list" x-data="{ projectsPrimary }">
     <template x-for="project in projectsPrimary">
@@ -63,7 +63,29 @@
               <span class="chip" :style="'background:' + tech.color + ';'" x-text="tech.name"></span>
             </template>
           </div>
+        </a>
+      </li>
+    </template> 
+  </ol>
 
+  <div class="secondary-header">
+    <div class="coding-heading">Additional Projects</div>
+    <hr>
+  </div>
+
+  <ol class="list list-secondary" x-data="{ projectsSecondary }">
+    <template x-for="project in projectsSecondary">
+      <li class="item-secondary">
+        <a :href="project.link">
+          <div class="top-row">
+            <h2 class="headline-secondary" x-text="project.title"></h2>
+            <div class="chip-wrapper">
+              <template x-for="tech in project.tech">
+                <span class="chip" :style="'background:' + tech.color + ';'" x-text="tech.name"></span>
+              </template>
+            </div>
+          </div>
+          <span x-text="project.description"></span>
         </a>
       </li>
     </template> 
@@ -116,7 +138,9 @@
       link: "/coding/grand-hotel",
       image: "./thumbs/grand-hotel.png",
       tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    },
+    }
+  ]
+  projectsSecondary = [
     {
       title: "Phyllotaxis",
       description: "Simulate the seed patterns of a sunflower. Some interesting math on a html canvas.",
