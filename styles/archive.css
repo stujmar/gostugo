@@ -3,6 +3,10 @@
   border-bottom: 1px solid rgb(201, 201, 201);
 }
 
+hr {
+  margin-top: .5rem;
+}
+
 .coding-wrapper {
   width: 90%;
   margin: 25px auto 15px;
@@ -35,7 +39,7 @@ a:hover {
   text-decoration: none;
 }
 
-.secondary-header {
+.section-header {
   text-align: center;
   width: max-content;
   margin: 0 auto;
@@ -163,7 +167,7 @@ a:hover {
 .chip {
   color : white;
   font-size: .75rem;
-  padding: 0 .5rem;
+  padding: 0 .5rem .1rem;
   border-radius: 10px;
   background: #73d13c;
 }

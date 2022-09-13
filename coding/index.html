@@ -46,7 +46,10 @@
 			</div>
 	</nav>
   <div class="coding-wrapper">
-    <h2 class="coding-heading">Featured Projects.</h2>
+    <div class="section-header">
+      <h2 class="coding-heading">Featured Projects.</h2>
+      <hr>
+    </div>
     <p class="lead text-muted">You have found an extensive list of my coding projects.</p>
   </div>
   <ol class="list" x-data="{ projectsPrimary }">
@@ -68,7 +71,7 @@
     </template> 
   </ol>
 
-  <div class="secondary-header">
+  <div class="section-header">
     <div class="coding-heading">Additional Projects</div>
     <hr>
   </div>
@@ -107,7 +110,7 @@
     {
       title: "Wordle Hack",
       description: "A tool that gives you a secret edge when guessing Wordle words. Made with a Vue CDN.",
-      link: "/coding/wordle/?archive=true",
+      link: "/coding/wordle",
       image: "./thumbs/wordle.png",
       tech: [{name: "Vue", color: "#42b883"}]
     },
