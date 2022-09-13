@@ -7,10 +7,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+	<script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 	<link href="/styles/styles.css" rel="stylesheet">
-	<link href="/styles/archive.css" rel="stylesheet">
+	<link href="/styles/coding.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
@@ -46,128 +47,56 @@
 			</div>
 	</nav>
   <div class="coding-wrapper">
-    <h2 class="coding-heading">Featured Projects.</h2>
-    <p class="lead text-muted">You have found an extensive list of my coding projects.</p>
+    <h2 class="coding-heading">Coding Projects.</h2>
+    <p class="lead text-muted">You have found a list of my coding projects. Check out one of the project links below.</p>
   </div>
-  <ol class="list" x-data="{ projectsPrimary }">
-    <template x-for="project in projectsPrimary">
-      <li class="item">
-        <div class="item-number"></div>
-        <a :href="project.link">
-          <div class="top-row">
-            <h2 class="headline" x-text="project.title"></h2>
-          </div>
-          <span x-text="project.description"></span>
-          <div class="chip-wrapper">
-            <template x-for="tech in project.tech">
-              <span class="chip" :style="'background:' + tech.color + ';'" x-text="tech.name"></span>
-            </template>
-          </div>
-        </a>
-      </li>
-    </template> 
-  </ol>
-
-  <div class="secondary-header">
-    <div class="coding-heading">Additional Projects</div>
-    <hr>
+  <div class="coding-cards">
+    <!--- Wordle Card -->
+    <a href="/coding/wordle"class="coding-card">
+        <img class="coding-image" src="../thumbs/wordle.png">
+      <div class="coding-content"><h3>Wordle Hack</h3> <p> A fun little tool I made that gives you a secret edge when guessing Wordle words.</p></div>
+    </a>
+    <!--- Treelapse Card -->
+    <a href="http://www.treelapse.app" target="_blank" class="coding-card">
+      <img class="coding-image" src="../thumbs/treelapse.png">
+      <div class="coding-content"><h3>Treelapse</h3> React/Redux web app where you can plant trees.</div>
+    </a>
+    <!--- Hotdog Card -->
+    <a href="https://hotdogger.io/" target="_blank" class="coding-card">
+      <img class="coding-image" src="../thumbs/hotdog.png">
+      <div class="coding-content"><h3>Hotdogger</h3> A vanilla JS incremental clicker game.</div>
+    </a>
+    <!--- Wave Function Card -->
+    <a href="/coding/wfc" class="coding-card">
+        <img class="coding-image" src="../thumbs/wfc.png">
+        <div class="coding-content"><h3>Wave Function Collapse</h3> A series of tests using the wave function collapse algorithm to generate images and maps.</div>
+    </a>
+    <!--- Grand Hotel Card -->
+    <a href="/coding/grand-hotel" class="coding-card">
+        <img class="coding-image" src="../thumbs/grand-hotel.png">
+        <div class="coding-content"><h3>Grand Hotel</h3><p>Model of a hotel inspired by Hilbert's Paradox of the Grand Hotel.</p></div>
+      </a>
+      <!--- Phyllotaxis Card -->
+      <a href="/coding/phyllotaxis" class="coding-card">
+        <img class="coding-image" src="../thumbs/phyllotaxis.png">
+        <div class="coding-content"><h3>Phyllotaxis</h3><p>Simulate the seed patterns of a sunflower!</p></div>
+    </a>
+    <!--- Treepainter Card -->
+    <a href="/coding/treepainter" class="coding-card">
+        <img class="coding-image" src="../thumbs/treepainter.png">
+      <div class="coding-content"><h3>Tree Painter Classic</h3><p>A predecessor to Treelapse, this is a simple test made in Processing.</p></div>
+    </a>
+    <!--- Stars Card -->
+    <a href="/coding/stars" class="coding-card">
+        <img class="coding-image" src="../thumbs/stars.png">
+      <div class="coding-content"><h3>Stars</h3> <p> A quick test on an html canvas of a Star Trek like journey through the stars.</p></div>
+    </a>
+    <!--- Snake Card -->
+    <!-- <a href="/coding/snake" class="coding-card">
+        <img class="coding-image" src="./thumbs/snake.png">
+      <div class="coding-content"><h3>Snake</h3> <p>Just a fun interpretation of the game "snake". (requires keyboard)</p></div>
+    </a> -->
   </div>
-
-  <ol class="list list-secondary" x-data="{ projectsSecondary }">
-    <template x-for="project in projectsSecondary">
-      <li class="item-secondary">
-        <a :href="project.link">
-          <div class="top-row">
-            <h2 class="headline-secondary" x-text="project.title"></h2>
-            <div class="chip-wrapper">
-              <template x-for="tech in project.tech">
-                <span class="chip" :style="'background:' + tech.color + ';'" x-text="tech.name"></span>
-              </template>
-            </div>
-          </div>
-          <span x-text="project.description"></span>
-        </a>
-      </li>
-    </template> 
-  </ol>
-
 
 </body>
 </html>
-
-<script>
-  projectsPrimary = [
-    {
-      title: "Go Stu Go",
-      description: "My personal website built from scratch with little bits of bootstrap, fontawesome and alpineJS. How are you enjoying it so far?",
-      link: "/",
-      image: "./thumbs/wordle.png",
-      tech: [{name: "HTML/CSS", color: "#888"}]
-    },
-    {
-      title: "Wordle Hack",
-      description: "A tool that gives you a secret edge when guessing Wordle words. Made with a Vue CDN.",
-      link: "/coding/wordle/?archive=true",
-      image: "./thumbs/wordle.png",
-      tech: [{name: "Vue", color: "#42b883"}]
-    },
-    {
-      title: "Treelapse",
-      description: "React/Redux web app where you can plant trees. Lots of interesting CSS and component structuring. Deployed via Netlify.",
-      link: "http://www.treelapse.app",
-      image: "./thumbs/treelapse.png",
-      tech: [{name: "React", color: "#00d8ff"}, {name: "Redux", color: "#00d8ff"}, {name: "Tailwind", color: "#ff64d5"}]
-    },
-    {
-      title: "Hotdogger",
-      description: "A vanilla JS incremental clicker game. Made before I learned any frameworks.",
-      link: "https://hotdogger.io/",
-      image: "./thumbs/hotdog.png",
-      tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    },
-    {
-      title: "Wave Function Collapse",
-      description: "A series using the wave function collapse algorithm to generate images and maps.",
-      link: "/coding/wfc",
-      image: "./thumbs/wfc.png",
-      tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    },
-    {
-      title: "Grand Hotel",
-      description: "Interactive model of a hotel inspired by Hilbert's Paradox of the Grand Hotel.",
-      link: "/coding/grand-hotel",
-      image: "./thumbs/grand-hotel.png",
-      tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    }
-  ]
-  projectsSecondary = [
-    {
-      title: "Phyllotaxis",
-      description: "Simulate the seed patterns of a sunflower. Some interesting math on a html canvas.",
-      link: "/coding/phyllotaxis",
-      image: "./thumbs/phyllotaxis.png",
-      tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    },
-    {
-      title: "Tree Painter",
-      description: "A predecessor to Treelapse, this is a simple test made in Processing.",
-      link: "/coding/treepainter",
-      image: "./thumbs/treepainter.png",
-      tech: [{name: "processing", color: "#4298b5"}]
-    },
-    {
-      title: "Stars",
-      description: "An html canvas with a Star Trek like journey through the stars.",
-      link: "/coding/stars",
-      image: "./thumbs/stars.png",
-      tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    },
-    {
-      title: "Snake",
-      description: "Just a fun interpretation of the game \"snake\". (requires keyboard)",
-      link: "/coding/snake",
-      image: "./thumbs/snake.png",
-      tech: [{name: "canvas", color: "#e34f26"}, {name: "Javascript", color: "#f7cb30"}]
-    }
-  ]
-</script>
