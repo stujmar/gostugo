@@ -64,6 +64,7 @@ a:hover {
 }
 
 .list-secondary::after {
+  display: none;
   content: "";
   flex: auto;
   flex-grow: 1;
@@ -167,9 +168,10 @@ a:hover {
 .chip {
   color : white;
   font-size: .75rem;
-  padding: 0 .5rem .1rem;
+  padding: 0 .5rem 0rem;
   border-radius: 10px;
   background: #73d13c;
+  text-transform: uppercase;
 }
 .chip:hover {
   text-decoration: none;
@@ -191,11 +193,11 @@ a:hover {
 
 /* 'xl': '1280px', */
 @media (min-width: 1280px) {
+  .list-secondary::after {
+    display: flex;
+  }
 }
 
 /* '2xl': '1536px', */
 @media (min-width: 1536px) {
-  .list-secondary::after {
-    display:none;
-  }
 }
