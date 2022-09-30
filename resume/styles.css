@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+  color: #49351e;
 }
 
 .wrapper {
@@ -25,17 +27,44 @@
   width: 100%;
   border-bottom: #ffd978 4px solid;
   margin: 0 auto;
-  box-shadow: 0px 0px 25px 0px rgba(29, 7, 0, 0.25);
+  box-shadow: 0px 0px 10px 0px rgba(29, 7, 0, 0.1 );
 }
 
 .header {
   display: flex;
+  margin: 25px 0 0 0;
   justify-content: space-between;
-  margin-bottom: 20px;
-  color: #3b2a17;
-  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
 }
 
 .header-contact {
   text-align: right;
+}
+
+.section {
+  margin: 25px 0 0 0;
+}
+
+.section-text {
+  margin: 10px 0 0 0;
+}
+
+.skill-title {
+  margin-top: 15px;
+}
+
+.skill-list {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill-list-item {
+  list-style: none;
+  
+  padding: 0 10px 0 0;
+  /* border-left: 1px solid #49351e; */
+}
+
+.link {
+  font-weight: bold;
 }
