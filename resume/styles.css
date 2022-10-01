@@ -80,6 +80,17 @@ body {
   margin: 25px 0 0 0;
 }
 
+.header-title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.pronouns {
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .header-contact {
   display: flex;
   flex-direction: column;
@@ -174,6 +185,10 @@ body {
   }
   .paper-header, .paper-body {
     padding: 25px;
+  }
+  .header-title-wrapper {
+    flex-direction: row;
+    align-items: baseline;
   }
 }
 
