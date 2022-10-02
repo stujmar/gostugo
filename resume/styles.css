@@ -27,19 +27,22 @@ body {
 
 .social-wrapper {
   position: absolute;
-  top: 0;
-  right: 0;
+  z-index: 20;
+  top: -25px;
+  right: -20px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   width: max-content;
-  padding: 0 5px 0 25px;
+  padding: 0 35px 0 25px;
   height: 50px;
   background: white;
   border-bottom: #a87b48 2px solid;
   border-left: #a87b48 2px solid;
-  border-bottom-left-radius: 50px;
+  border-right: #a87b48 2px solid;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .social-path {
@@ -56,8 +59,18 @@ body {
   border-bottom: 4px solid #a87b48;
 }
 
+.wrapper-lines-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 144px;
+  flex-grow: 1;
+}
+
 .paper-header, .paper-body {
-  max-width: 700px;
+  position: relative;
+  z-index: 10;
+  max-width: 768px;
   background:white;
   padding: 10px;
   width: 100%;
@@ -222,6 +235,9 @@ body {
 
 /* 'md': '768px', */
 @media (min-width: 768px) {
+  .social-wrapper {
+    padding: 0 25px 0 25px;
+  }
 }
 
 /* 'lg': '1024px', */
