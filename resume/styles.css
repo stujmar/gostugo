@@ -58,16 +58,21 @@ body {
 
 .paper-header, .paper-body {
   max-width: 700px;
-  border-bottom: #ffd978 4px solid;
   background:white;
   padding: 10px;
   width: 100%;
   margin: 0 auto;
+  border-bottom: #ffd978 4px solid;
   box-shadow: 0px 0px 10px 0px rgba(29, 7, 0, 0.1 );
+}
+
+.paper-header {
+  border-top-left-radius: 50px;
 }
 
 .paper-body {
   padding-bottom: 50px;
+  /* border-bottom-right-radius: 25px; */
 }
 
 .header {
@@ -83,6 +88,10 @@ body {
 .header-title-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.header-subtitle, .pronouns {
+  color:#886134;
 }
 
 .pronouns {
@@ -123,14 +132,14 @@ body {
 }
 
 .skill-list {
-  margin-top: 10px;
+  margin-top: 5px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .skill-list-item {
   list-style: none;
-  padding: 5px 10px 0 0;
+  padding: 0px 10px 0 0;
 }
 
 .link {
@@ -142,13 +151,19 @@ body {
 }
 
 .job-title {
-  width: max-content;
+  display: inline-block;
+  min-width: 1px;
+  width: auto;
+  border-bottom: 2px solid #a87b48;
   max-width: 100%;
-  border-bottom: 1px solid #49351e;
+}
+
+.job-issuer {
+  margin-top: 5px;
 }
 
 .job-details {
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -157,10 +172,23 @@ body {
 }
 
 .job-list {
+  list-style: none;
   margin: 10px 0 0 15px;
 }
 
+.job-list-item::before {
+  position: relative;  
+    content: "•";
+    color: #865f31;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  }
+
+
 .job-list-item {
+  padding-left: 0px;
   margin-top: 4px;
   font-size: .9rem;
 }
