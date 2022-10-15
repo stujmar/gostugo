@@ -7,7 +7,7 @@ class Line {
     draw() {
 
         stroke(255,0,0);
-        strokeWeight(4);
+        strokeWeight(1);
         if(abs(this.start.x - this.end.x) < 3 && abs(this.start.y - this.end.y) < 50) {
         line(this.start.x, this.start.y, this.end.x, this.end.y);
         }
