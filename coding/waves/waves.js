@@ -4,6 +4,8 @@ let height = 800;
 let x = 0;
 let y = 0;
 let velocity = 3;
+let mode = "sin";
+let modeButton = document.getElementById("mode-btn");
 
 class Line {
     constructor(x1, y1, x2, y2) {
@@ -26,6 +28,37 @@ class Line {
     }
 }
 
+function Graph() {}
+Graph.sin = (args) => {
+  return Math.sin(args);
+},
+Graph.cos = (args) => {
+  return Math.cos(args);
+},
+Graph.tan = (args) => {
+  return Math.tan(args);
+}
+
+// Create a function to cycle through three modes "sin", "cos", "tan".
+function changeMode() {
+  if (mode === "sin") {
+    document.getElementById("sin-icon").style.display = "none";
+    document.getElementById("cos-icon").style.display = "block";
+    mode = "cos";
+  } else if (mode === "cos") {
+    document.getElementById("cos-icon").style.display = "none";
+    document.getElementById("tan-icon").style.display = "block";
+    mode = "tan";
+  } else if (mode === "tan") {
+    document.getElementById("tan-icon").style.display = "none";
+    document.getElementById("sin-icon").style.display = "block";
+    mode = "sin";
+  }
+}
+
+// Attach an event listener to the button.
+modeButton.addEventListener("click", changeMode);
+
 // Create canvas on webpage.
 function setup() {
   frameRate(120);
@@ -37,15 +70,15 @@ function setup() {
 
 // Loop to draw dots.
 function draw() {
-  myLine.update(x,(Math.sin(y) * 150)+ 550);
+  myLine.update(x,(Graph[mode](y) * 150)+ 550);
   if (x < width) {
     myLine.draw();
    drawRect(x, y);
     console.log();
     push();
     noStroke();
-    fill(0, 0, 0);
-    ellipse(x,(Math.sin(y) * 150)+ 200,4,4);
+    fill(255, 255, 255);
+    ellipse(x,(Graph[mode](y) * 150)+ 200, 3, 3);
     pop();
     x+=velocity;
   } else {
@@ -58,7 +91,7 @@ function draw() {
 function drawRect(x, y) {
   push();
   noStroke();
-  fill(Math.round(rangeMap(Math.sin(y), -1, 1, 0, 255)));
+  fill(Math.round(rangeMap(Graph[mode](y), -1, 1, 0, 255)));
   rect(x, height - 35, 5, 25);
   pop();
 }

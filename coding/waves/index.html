@@ -6,10 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
   <script src="waves.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
   <title>Waves</title>
 </head>
 <body>
+  <button id="mode-btn" class="mode-btn">
+    <svg id="sin-icon" class="sin" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="button-back" d="M51.65 0H0V51.65H51.65V0Z"/>
+      <path d="M3 3V48H48V3H3ZM44.06 6.94V25.97L41.67 29.53C40.11 31.84 38.12 33.11 36.06 33.11C34 33.11 32.01 31.84 30.45 29.53L23.29 18.89C21.2 15.78 18.33 14.06 15.23 14.06C12.13 14.06 9.27 15.77 7.17 18.89L6.92 19.34V6.93H44.06V6.94ZM6.93 44.06V26.12L10.36 21.03C11.72 19.01 13.45 17.9 15.24 17.9C17.03 17.9 18.76 19.01 20.12 21.03L27.28 31.67C29.57 35.07 32.69 36.95 36.07 36.95C39.08 36.95 41.87 35.46 44.07 32.73V44.06H6.93Z"/>
+    </svg>
+    <svg id="cos-icon" class="cos" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="button-back" d="M51.65 0H0V51.65H51.65V0Z"/>
+      <path d="M3 3V48H48V3H3V3ZM44.0621 6.93787V15.2665C40.0258 15.3354 37.2102 20.0116 34.4833 24.55C33.2625 26.578 32.0024 28.6848 31.0475 29.5117C29.3837 30.949 27.4443 31.7464 25.4459 31.8154C23.4474 31.7464 21.508 30.9589 19.8442 29.5117C18.8893 28.6848 17.6292 26.5878 16.4084 24.55C13.711 20.0608 10.925 15.424 6.93787 15.2763V6.93787H44.0621ZM6.93787 44.0621V19.224C8.77882 19.4997 11.3286 23.7329 13.0317 26.5681C14.538 29.0785 15.8375 31.2444 17.2649 32.475C19.608 34.503 22.4925 35.6548 25.3868 35.7335H25.436H25.4852C28.3894 35.6548 31.2739 34.503 33.6071 32.475C35.0444 31.2345 36.3439 29.0687 37.8403 26.5681C39.573 23.6738 42.1916 19.3323 44.0424 19.2043V44.0621H6.91818H6.93787Z"/>
+    </svg>
+    <svg id="tan-icon" class="tan" width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="button-back" d="M51.65 0H0V51.65H51.65V0Z"/>
+      <path d="M3 3V48H48V3H3ZM40.2522 6.93787C40.2522 17.895 35.1133 23.6935 25.3868 23.6935C15.6603 23.6935 8.58193 30.191 6.93787 39.9569V6.93787H40.2522ZM10.5213 44.0621C10.6395 34.2273 16.5758 27.6314 25.3769 27.6314C36.4227 27.6314 43.1072 21.1733 44.0523 9.81251V44.0621H10.5213Z"/>
+    </svg>
+      
+        
+  </button>
   <div id="mountPoint"></div>
 </body>
 </html>
