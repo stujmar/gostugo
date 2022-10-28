@@ -1,0 +1,18 @@
+.portfolio-menu {
+  width: max-content;
+  /* width: 100%; */
+  display: flex;
+  /* justify-content: space-around; */
+  margin: 8px auto 0;
+  gap: 36px;
+}
+
+.porfolio-link, .porfolio-link:visited {
+  color:rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.porfolio-link:hover {
+  color:rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
