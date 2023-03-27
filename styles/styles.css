@@ -45,6 +45,10 @@ ul {
     max-width: 200px !important;
 }
 
+.sosh, .sosh > h3 a {
+    color:  #282927;
+}
+
 .sosh:hover, .sosh:hover > h3 a {
     color:  #8ac756;
     text-decoration: underline;
