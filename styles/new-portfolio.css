@@ -1,14 +1,12 @@
 body {
     background-color: #60bb89;
 }
-
 .nav {
     display: block;
     display: relative;
     height: 50px;
     width: 100%;
 }
-
 .nav-list {
     display: flex;
     justify-content: space-between;
@@ -85,7 +83,6 @@ span {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: white;
-    text-transform: ;
 }
 
 .banner-ninja {
@@ -96,4 +93,72 @@ span {
 .treelapse {
     text-align: left;
     margin-left: 100px;
+}
+
+.nav {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    height: 50px;
+}
+
+.titles {
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.title {
+    color: purple;
+    width: 50%;
+    text-align: center;
+    border: 1px solid purple;
+}
+
+.bgs {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 50px;
+    justify-content: space-around;
+}
+
+.bg {
+    width: 50%;
+    height: 50px;
+    background-color: rgb(218, 218, 218);
+    text-align: center;
+    border: 1px solid rgb(8, 8, 7);
+}
+
+.bg:first-child:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -25px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-top: 50px solid blueviolet;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+
+/* When you hover over a .title have a .bg hightlight */
+.title:first-child:hover ~ .bgs .bg:first-child {
+    width: 66%;
+}
+
+.title:nth-child(2):hover ~ .bgs .bg:nth-child(2) {
+    width: 66%;
 }
