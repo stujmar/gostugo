@@ -1,106 +1,35 @@
 body {
     background-color: #60bb89;
 }
+
+.banner {
+    height: 200px;
+    background: white;
+}
+
 .nav {
     display: block;
-    display: relative;
-    height: 50px;
-    width: 100%;
-}
-.nav-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    margin: auto;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-    list-style: none;
-}
-
-li span {
-    display: block;
-    line-height: 50px;
-}
-
-.nav-bg-item:hover {
-    width: 66%;
-}
-
-.nav-bg-parent {
-    display: flex;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    /* box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.356); */
-    cursor: pointer;
-}
-
-.nav-bg-item {
-    background-color: #60bb89;
-    width: 50%;
-    height: 50px;
     position: relative;
-    list-style: none;
-    transition: width 0.5s;
+    height: 50px;
+    width: 100%;
 }
 
-.nav-bg-item:first-child {
-    background-color: blueviolet;
+.nav {
+    position: relative;
+    width: 100%;
+    height: 50px;
 }
 
-/* draw a purple triangle after the element */
-.nav-bg-item:first-child:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -25px;
-    width: 0;
-    height: 0;
-    z-index: 1;
-    border-top: 50px solid blueviolet;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-}
-
-span {
+.titles {
     display: block;
     line-height: 50px;
     font-size: 1.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: white;
+    cursor: pointer;
 }
 
-.banner-ninja {
-    text-align: right;
-    margin-right: 100px;
-}
-
-.treelapse {
-    text-align: left;
-    margin-left: 100px;
-}
-
-.nav {
-    position: relative;
-    margin-top: 50px;
-    width: 100%;
-    height: 50px;
-}
 
 .titles {
     color: black;
@@ -115,10 +44,9 @@ span {
 }
 
 .title {
-    color: purple;
+    color: rgb(255, 247, 255);
     width: 50%;
     text-align: center;
-    border: 1px solid purple;
 }
 
 .bgs {
@@ -134,11 +62,17 @@ span {
 }
 
 .bg {
+    background-color: #60bb89;
     width: 50%;
     height: 50px;
-    background-color: rgb(218, 218, 218);
     text-align: center;
-    border: 1px solid rgb(8, 8, 7);
+    transition: width 0.5s;
+}
+
+
+.bg:first-child {
+    position:relative;
+    background-color: blueviolet;
 }
 
 .bg:first-child:after {
@@ -156,9 +90,9 @@ span {
 
 /* When you hover over a .title have a .bg hightlight */
 .title:first-child:hover ~ .bgs .bg:first-child {
-    width: 66%;
+    width: 60%;
 }
 
 .title:nth-child(2):hover ~ .bgs .bg:nth-child(2) {
-    width: 66%;
+    width: 60%;
 }
