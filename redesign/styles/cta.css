@@ -1,0 +1,20 @@
+.cta {
+    display: block;
+    width: max-content;
+    font-family: "arboria", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;
+    opacity: .75;
+    color: white;
+    text-decoration: none;
+    background-color: #546eaf;
+    border-radius: 10px;
+    padding: 10px 20px 12px;
+    margin: 20px auto 50px;
+}
+
+.cta:hover {
+    background-color: #3f5a8d;
+    text-decoration: underline;
+}
