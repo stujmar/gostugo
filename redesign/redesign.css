@@ -1,6 +1,7 @@
 .module-parent, .module-parent-teal {
     grid-template-columns: 1fr;
     display: grid;
+    position: relative;
     height: 400px;
     width: 100%;
 }
@@ -8,6 +9,7 @@
 .content-box-one, .content-box-two, .content-box-three {
     height: 300px;
     background: #f5f3e6;
+    box-shadow: 2px 2px 0 2px rgba(0, 0, 0, 0.1);
     grid-column: 1 / span 2;
     grid-row: 1;
     z-index: 10;
@@ -18,7 +20,18 @@
     grid-column: 1;
 }
 
+.canvas {
+    z-index: -1;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    bottom: 0;
+    position: absolute;
+}
+
 .triangle-one, .triangle-four {
+    z-index: 0;
     height: 400px;
     position: absolute;
     top:0;
@@ -66,11 +79,11 @@
 
 .left {
     grid-column: 1;
-    background: #b0f7c7;
+    /* background: #b0f7c7; */
 }
 .center {
     grid-column: 1;
-    background: #93eeee;
+    /* background: #93eeee; */
 }
 
 /* left class spans two grid cells*/
