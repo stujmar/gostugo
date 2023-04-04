@@ -14,14 +14,14 @@ let colors = {
         "secondary": "#86f5ab"
     }
 }
-let cancasInstances = initializeCanvas(canvasIds);
+let canvasIntances = initializeCanvas(canvasIds);
 
 function animate() {
     // if window is resized, update canvas width
     window.onresize = function() {
         canvasInstance = initializeCanvas(canvasIds);
     }
-    cancasInstances.forEach((canvasInstance) => {
+    canvasIntances.forEach((canvasInstance) => {
         drawWave(canvasInstance);
     });
     window.requestAnimationFrame(animate); 
