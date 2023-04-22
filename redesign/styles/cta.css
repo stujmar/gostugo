@@ -18,3 +18,11 @@
     background-color: #3f5a8d;
     text-decoration: underline;
 }
+
+.cta-project {
+    background-color: #d62828;
+}
+
+.cta-project:hover {
+    background-color: #df4c4c;
+}
