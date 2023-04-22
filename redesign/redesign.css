@@ -86,7 +86,11 @@
     /* background: #93eeee; */
 }
 
-/* left class spans two grid cells*/
+.right-wrapper {
+    height: 100%;
+    border: 1px solid #000;
+    width: 100%;
+}
 
 
 /* 'xs': '425px' */
