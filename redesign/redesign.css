@@ -87,9 +87,20 @@
 }
 
 .project-wrapper {
+    margin-left: auto;
+    margin-top: 25px;
+    font-family: "arboria", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
-    width: 100%;
+    max-width: 400px;
 }
+
+.project-center {
+    margin-left: 0;
+}
+
 
 
 /* 'xs': '425px' */
