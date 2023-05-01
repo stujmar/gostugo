@@ -99,6 +99,7 @@
 }
 
 .project-title {
+    font-size: 1.75rem;
     text-align: center;
 }
 
@@ -109,6 +110,13 @@
 svg {
     width: max-content;
     margin: 0 auto;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: end;
 }
 
 /* 'xs': '425px' */
